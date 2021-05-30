@@ -15,16 +15,17 @@ export class RecipeService {
         new Ingredient('Other Stuff', 25)]),
     new Recipe('Another Test', 'They keep coming.', 'https://pixnio.com/free-images/2017/03/25/2017-03-25-09-34-43.jpg',
       [new Ingredient('Random', 25),
-      new Ingredient(`Random Stuff I couldn't think of`, 125)])
+        new Ingredient(`Random Stuff I couldn't think of`, 125)])
   ];
 
   getRecipes() {
     return this.recipes.slice();
   }
 
-  addIngredientsToShoppingList(ingredients: Ingredient[]){
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
     this.shoppingListService.addIngredients(ingredients)
   }
+
   constructor(private shoppingListService: ShoppingListService) {
   }
 }

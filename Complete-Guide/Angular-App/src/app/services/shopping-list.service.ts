@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import {Injectable, EventEmitter} from '@angular/core';
 import {Ingredient} from "../shared/models/ingredient.models";
 
 @Injectable({
@@ -11,9 +11,10 @@ export class ShoppingListService {
     new Ingredient('Tomatoes', 10)
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
-  getIngredients(){
+  getIngredients() {
     //copy of the array not the original!!
     return this.ingredients.slice();
     //to save the new ingredients however we need something different
@@ -21,12 +22,12 @@ export class ShoppingListService {
     //this allows us to change the original array allowing me to add to or delete from.
   }
 
-  onIngredientAdded(ingredient: Ingredient){
+  onIngredientAdded(ingredient: Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientsChanged.emit(this.ingredients.slice());
   }
 
-  addIngredients(ingredients: Ingredient[]){
+  addIngredients(ingredients: Ingredient[]) {
     // for (let ingredient of ingredients){
     //   this.addIngredients(ingredients)
     // }
