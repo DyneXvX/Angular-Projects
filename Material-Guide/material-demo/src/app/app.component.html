@@ -1,0 +1,27 @@
+<router-outlet></router-outlet>
+<h3>Display in Material</h3>
+<div class="mat-display-4">Display 4</div>
+<h3>Buttons in Material</h3>
+<div>
+  <button mat-button>Material Button</button>
+  <button mat-raised-button>Raised Button</button>
+</div>
+<div>
+  <button mat-icon>Icon</button>
+  <button mat-fab>Fab</button>
+  <button mat-mini-fab>MiniFab</button>
+</div>
+<br>
+<div>
+  <button color="primary" mat-button>Primary Button Color</button>
+  <button color="accent" mat-button>Accent Button Color</button>
+  <button color="warn" mat-button>Warn Button Color</button>
+  <button color="primary" mat-raised-button>Primary Button Color</button>
+  <button color="accent" mat-raised-button>Accent Button Color</button>
+  <button color="warn" mat-raised-button>Warn Button Color</button>
+</div>
+<br>
+<div>
+  <mat-button-toggle #togglebtn>Toggle</mat-button-toggle>
+  {{togglebtn.checked}}
+</div>
