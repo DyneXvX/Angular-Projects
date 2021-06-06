@@ -21,7 +21,53 @@
   <button color="warn" mat-raised-button>Warn Button Color</button>
 </div>
 <br>
+<h3>Button Toggle Elements - Said to be better than checkboxes</h3>
 <div>
   <mat-button-toggle #togglebtn>Toggle</mat-button-toggle>
-  {{togglebtn.checked}}
+  What is the value: {{togglebtn.checked}}
+</div>
+<br/>
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+    <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="React">React</mat-button-toggle>
+    <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  What is the value: {{toggleGroup.value}}
+</div>
+<br/>
+<h2>However if I want this to act like checkboxes then:</h2>
+<div>
+  <mat-button-toggle-group #toggleGroup2="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="React">React</mat-button-toggle>
+    <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  What is the value: {{toggleGroup2.value}}
+</div>
+<br>
+<h2>Mat Icons</h2>
+<div>
+  <mat-icon>grade</mat-icon>
+</div>
+<div>
+  <mat-icon color="primary">get_app</mat-icon>
+</div>
+<h2>Badges (Moved them around and changed the sizes)</h2>
+<div class="text-center">
+<div>
+  <span matBadge="5">Notifications</span>
+</div>
+<br/>
+<div>
+  <span matBadge="5" matBadgePosition="below before" matBadgeSize="large">Notifications</span>
+</div>
+<br/>
+<div>
+  <span matBadge="5" matBadgePosition="below after">Notifications</span>
+</div>
+<br>
+<div>
+  <span [matBadge]="notifications" [matBadgeHidden]="notifications==0" matBadgePosition="above after" matBadgeOverlap="false">Notifications</span>
+</div>
 </div>
