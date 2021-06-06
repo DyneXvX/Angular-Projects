@@ -55,30 +55,61 @@
 </div>
 <h2>Badges (Moved them around and changed the sizes)</h2>
 <div class="text-center">
-<div>
-  <span matBadge="5">Notifications</span>
-</div>
-<br/>
-<div>
-  <span matBadge="5" matBadgePosition="below before" matBadgeSize="large">Notifications</span>
-</div>
-<br/>
-<div>
-  <span matBadge="5" matBadgePosition="below after">Notifications</span>
-</div>
-<br>
-<div>
-  <span [matBadge]="notifications" [matBadgeHidden]="notifications==0" matBadgePosition="above after" matBadgeOverlap="false">Notifications</span>
-</div>
+  <div>
+    <span matBadge="5">Notifications</span>
+  </div>
+  <br/>
+  <div>
+    <span matBadge="5" matBadgePosition="below before" matBadgeSize="large">Notifications</span>
+  </div>
+  <br/>
+  <div>
+    <span matBadge="5" matBadgePosition="below after">Notifications</span>
+  </div>
+  <br>
+  <div>
+    <span [matBadgeHidden]="notifications==0" [matBadge]="notifications" matBadgeOverlap="false"
+          matBadgePosition="above after">Notifications</span>
+  </div>
 </div>
 
 <h2>Side Nav</h2>
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side"[(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav #sidenav [(opened)]="opened" mode="side">Sidenav</mat-sidenav>
   <mat-sidenav-content>Main
     <button (click)="opened=!opened">Toggle Open</button>
     <button (click)="sidenav.open()">Open</button>
     <button (click)="sidenav.close()">Close</button>
     <button (click)="sidenav.toggle()">Toggle Open</button>
+    <br>
+    <div class="col-4 offset-3 mt-5">
+      <h1>I am building this with the side nav to see how it works.</h1>
+      <h2>Menu setup</h2>
+      <mat-menu #appMenu="matMenu" xPosition="after" yPosition="below">
+        <button mat-menu-item [matMenuTriggerFor]="subMenu">FrontEnd</button>
+        <button mat-menu-item>Backend</button>
+      </mat-menu>
+      <button [matMenuTriggerFor]="appMenu" mat-flat-button>Menu</button>
+
+      <mat-menu #subMenu=matMenu>
+        <button mat-menu-item>Angular</button>
+        <button mat-menu-item>React</button>
+        <button mat-menu-item>Vue</button>
+      </mat-menu>
+
+      <mat-menu #lazyMenu="matMenu">
+        <ng-template matMenuContent let-name="name" let-hobby="hobby">
+          <button mat-menu-item>Settings</button>
+          <button mat-menu-item>Hobby is {{hobby}}</button>
+          <button mat-menu-item>Log out {{name}}</button>
+        </ng-template>
+      </mat-menu>
+
+      <button mat-raised-button [matMenuTriggerData]="{name: 'Sure', hobby: 'football'}"
+              [matMenuTriggerFor]="lazyMenu">Sure</button>
+      <button mat-raised-button [matMenuTriggerData]="{name: 'Another', hobby: 'teaching'}"
+              [matMenuTriggerFor]="lazyMenu">Another</button>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+

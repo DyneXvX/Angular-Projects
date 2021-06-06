@@ -4,6 +4,7 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatIconModule} from "@angular/material/icon";
 import {MatBadgeModule} from "@angular/material/badge";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 const MaterialComponents = [
@@ -11,7 +12,8 @@ const MaterialComponents = [
   MatButtonToggleModule,
   MatIconModule,
   MatBadgeModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatMenuModule
 ]
 
 @NgModule({
