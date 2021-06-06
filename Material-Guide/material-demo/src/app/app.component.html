@@ -71,3 +71,14 @@
   <span [matBadge]="notifications" [matBadgeHidden]="notifications==0" matBadgePosition="above after" matBadgeOverlap="false">Notifications</span>
 </div>
 </div>
+
+<h2>Side Nav</h2>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side"[(opened)]="opened">Sidenav</mat-sidenav>
+  <mat-sidenav-content>Main
+    <button (click)="opened=!opened">Toggle Open</button>
+    <button (click)="sidenav.open()">Open</button>
+    <button (click)="sidenav.close()">Close</button>
+    <button (click)="sidenav.toggle()">Toggle Open</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
